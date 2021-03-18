@@ -1,0 +1,42 @@
+print ("введите N")
+n= int(input())
+print ("введите M")
+m= int(input())
+print ("введите X")
+x= int(input())
+print ("введите Y")
+y= int(input())
+
+a=int
+b=int
+
+if n >= m:
+    if x<(n-x):
+        a=x
+    else:
+        a=(n-x)
+else:
+    if x<(m-x):
+        a=x
+    else:
+        a=(m-x)
+
+
+
+if n >= m:
+    if y<(m-y):
+        b=y
+    else:
+        b=(m-y)
+else:
+    if y<(n-y):
+        b=y
+    else:
+        b=(n-y)
+        
+if a<b:
+    print ("минимальное расстояние:")
+    print (a)
+else:
+    print ("минимальное расстояние:")
+    print (b)
