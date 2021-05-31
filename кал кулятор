@@ -1,0 +1,68 @@
+import math
+from math import sqrt
+print("Калькулятор")
+
+def calculator():
+    sign = str(input("Введите один из следующих операторов: '+, -, /, *, ^, sqrt, !'  : "))
+    if sign == '+' or sign == '-' or sign == '/' or sign == '*' or sign == '^' or sign == 'sqrt' or sign == '!':
+        print(f"Выбранный Вами оператор: {sign}")
+        if sign == 'sqrt':
+            if num1 < 0:
+                print("Введенное число меньше 0. Невозможно извлечь корень!")
+            else:
+                res = sqrt(num1)
+                print(f"Полученное значние: {res}")
+        elif sign == '!':
+            print("Вы выбрали факториал")
+            print("Важно: Факториал — функция, определённая на множестве неотрицательных целых чисел")
+            while True:
+                try:
+                    num3 = int(input("Пожалуйста, введите еще раз выбранное Вами число (число должно быть целым и неотрицательным): x = "))
+                    if num3 < 0:
+                        print("Нельзя найти факториал отрицательного числа! Введите целое неотрицательное число")
+                    else:
+                        res = math.factorial(num3)
+                        print(f"Полученное значение: {res}")
+                        break
+                except ValueError:
+                    print("Ошибка! Введите целое неотрицательное число")
+
+        else:
+            while True:
+                try:
+                    num2 = float(input("Введите число: y = "))
+                    if sign == '+':
+                        res = num1 + num2
+                        print(f"Полученное значение суммы: {res}")
+                        break
+                    elif sign == '-':
+                        res = num1 - num2
+                        print(f"Полученное значение разности: {res}")
+                        break
+                    elif sign == '/':
+                        res = num1 / num2
+                        print(f"Полученное значение деления: {res}")
+                        break
+                    elif sign == '*':
+                        res = num1 * num2
+                        print(f"Полученное значение произведения: {res}")
+                        break
+                    elif sign == '^':
+                        res = num1 ** num2
+                        print(f"Полученное значение возведения в степень: {res}")
+                        break
+                except ValueError:
+                    print("Вы ввели не число!")
+                    print("Введите целое число или число с плавающей точкой!")
+
+    else:
+        print("Введите один из предложенных ранее операторов")
+        calculator()
+
+while True:
+    try:
+        num1 = float(input("Введите число: x = "))
+        calculator()
+        break
+    except ValueError:
+        print("Вы ввели не число!")
