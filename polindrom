@@ -1,0 +1,11 @@
+entered = str(input("Введите то, что проверяем на полиндром: ")).lower()
+length = len(entered)
+length = length // 2
+for i in range(length):
+    if entered[i] != entered[-1-i]:
+        print("Это не палиндром")
+        break
+else:
+    print("Это палиндром")
+print("Нажмите Enter, чтобы выйти...")
+input()
